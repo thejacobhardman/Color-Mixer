@@ -25,6 +25,8 @@ int main()
 	while (isRunning == true) {
 		int firstColor = 0;
 		int secondColor = 0;
+		string firstColorDisplay = "";
+		string secondColorDisplay = "";
 
 		int mixedColorNum = 0;
 		string mixedColorDisplay = "";
@@ -41,14 +43,17 @@ int main()
 
 			if (userInput == "red") {
 				firstColor = RED;
+				firstColorDisplay = "Red";
 				userConfirm = true;
 			}
 			else if (userInput == "blue") {
 				firstColor = BLUE;
+				firstColorDisplay = "Blue";
 				userConfirm = true;
 			}
 			else if (userInput == "yellow") {
 				firstColor = YELLOW;
+				firstColorDisplay = "Yellow";
 				userConfirm = true;
 			}
 			else {
@@ -66,14 +71,17 @@ int main()
 
 			if (userInput == "red") {
 				secondColor = RED;
+				secondColorDisplay = "Red";
 				userConfirm = true;
 			}
 			else if (userInput == "blue") {
 				secondColor = BLUE;
+				secondColorDisplay = "Blue";
 				userConfirm = true;
 			}
 			else if (userInput == "yellow") {
 				secondColor = YELLOW;
+				secondColorDisplay = "Yellow";
 				userConfirm = true;
 			}
 			else {
@@ -95,15 +103,14 @@ int main()
 			mixedColorDisplay = "Green";
 			break;
 		default:
-			cout << "FATAL ERROR";
 			break;
 		}
 
 		if (firstColor == secondColor) {
-			cout << "Error: The two colors that you entered are the same.";
+			cout << "Error: The two colors that you entered are the same." << endl;
 		}
 		else {
-			cout << "The secondary color that is created by mixing the two primary colors that you chose is: " << mixedColorDisplay << endl;
+			cout << "The secondary color that is created by mixing " << firstColorDisplay << " and " << secondColorDisplay <<  " is: " << mixedColorDisplay << endl;
 		}
 
 		userInput = "";
@@ -113,10 +120,10 @@ int main()
 			cout << "Would you like to run the program again? (Y/N): ";
 			cin >> userInput;
 
-			if (userInput == "y" || "Y") {
+			if (userInput == "y" || userInput == "Y") {
 				userConfirm = true;
 			}
-			else if (userInput == "n" || "N") {
+			else if (userInput == "n" || userInput == "N") {
 				isRunning = false;
 				userConfirm = true;
 			}
